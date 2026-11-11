@@ -38,6 +38,11 @@ code { font-family: inherit; }
 .list a:hover { border-color: var(--accent); }
 .list .t { font-weight: 800; font-size: 18px; }
 .list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
 footer { border-top: 2px solid var(--line); }
 footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
 </style>
@@ -57,6 +62,8 @@ footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
 <li>懒得点就直接打字，比如"帮我设计一张海报"。</li>
 </ul>
 <p>左边栏没看到 Design？点 <strong>Artifacts</strong>，再选 Design 模板，或者直接打字。</p>
+<div class="shots"><figure><img src="guide-img/step1-sidebar.jpg" alt="① 左边栏点 Design" loading="lazy" width="540" height="960"><figcaption>① 左边栏点 Design</figcaption></figure><figure><img src="guide-img/step1-card.jpg" alt="② 再点 Design 这张卡" loading="lazy" width="540" height="960"><figcaption>② 再点 Design 这张卡</figcaption></figure></div>
+
 <p><strong>第二步：一句话，讲四件事</strong>（视频 00:16）</p>
 <table>
 <thead>
@@ -89,8 +96,13 @@ footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
 </tr>
 </tbody>
 </table>
+<div class="shots"><figure><img src="guide-img/step2-four-things.jpg" alt="一句话讲四件事" loading="lazy" width="540" height="960"><figcaption>一句话讲四件事</figcaption></figure></div>
+
 <p><strong>第三步：发出去</strong>（视频 00:34）</p>
 <p>Claude 会在对话旁边的画布上把它做出来。</p>
+<div class="shots"><figure><img src="guide-img/step3-canvas.jpg" alt="画布上出图" loading="lazy" width="540" height="960"><figcaption>画布上出图</figcaption></figure></div>
+<p class="note">视频里的海报是示意图，实际样子以 Claude 做出来的为准。</p>
+
 <h2>直接复制</h2>
 <pre><code>帮我的 kopi 店做一张开张海报。上面是大标题，下面排三杯招牌饮料。
 写上地址和开张日期。这张海报是给附近的上班族看的。
@@ -98,6 +110,8 @@ footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
 <p>把店名、内容换成你自己的就能用。</p>
 <h2>口诀</h2>
 <p><strong>做什么、怎么排、放什么、给谁看。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
 <h2>时间点</h2>
 <table>
 <thead>
