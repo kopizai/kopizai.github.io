@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 3 集 · 换个方向，旧的不丢 · KopizAI</title>
+<meta name="description" content="想试新风格又舍不得现在这版，先对 Claude 说&quot;保存现在的，换个完全不同的方向&quot;。先存，再换。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 3 集 · 换个方向，旧的不丢</h1>
+
+<p><strong>一句话：</strong> 想试新风格又舍不得现在这版，先对 Claude 说"保存现在的，换个完全不同的方向"。先存，再换。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-12　｜　时长 43 秒　｜　非官方教学</p>
+<h2>先知道一件事</h2>
+<p>Claude Design 现在<strong>还没有版本历史</strong>（官方说明"已知限制"里写的）。设计标题旁的菜单里有 Share、Export、Duplicate 等，但找不到"回到旧版"。所以想大改方向之前，先让 Claude 把现在这版留好。</p>
+<div class="shots"><figure><img src="guide-img/menu.jpg" alt="菜单里没有版本历史" loading="lazy" width="540" height="960"><figcaption>菜单里没有版本历史</figcaption></figure></div>
+
+<h2>跟着做</h2>
+<p><strong>第一步：换方向之前，说这句</strong>（视频 00:15）</p>
+<p>在 Design 旁边的对话框里打：</p>
+<pre><code>保存现在的，换个完全不同的方向：复古风
+</code></pre>
+<p>冒号后面换成你想试的风格。</p>
+<div class="shots"><figure><img src="guide-img/step1-say.jpg" alt="换方向之前先说这句" loading="lazy" width="540" height="960"><figcaption>换方向之前先说这句</figcaption></figure></div>
+
+<p><strong>第二步：旧的原样留着，新的在旁边</strong>（视频 00:21）</p>
+<p>我们实际试的时候，Claude 把原来的热带风海报原样留着，在画布上旁边新做了一张复古风，两张画板分别标着"热带风""复古风"。</p>
+<div class="shots"><figure><img src="guide-img/step2-two.jpg" alt="热带版还在，复古版在旁边" loading="lazy" width="540" height="960"><figcaption>热带版还在，复古版在旁边</figcaption></figure></div>
+
+<p><strong>第三步：还拿不定？要两三个方向</strong>（视频 00:25）</p>
+<pre><code>还是拿不定主意，给我两三个方向
+</code></pre>
+<p>这次 Claude 又加了"简约现代""街头招牌"两张，四张排一排，还附了一张对比表（每种风格的感觉、适合什么场合）。对比表不一定每次都有，没有的话可以直接请它比一比。</p>
+<div class="shots"><figure><img src="guide-img/step3-four.jpg" alt="四张排一排，附对比表" loading="lazy" width="540" height="960"><figcaption>四张排一排，附对比表</figcaption></figure></div>
+
+<h2>四个方向长这样</h2>
+<div class="shots"><figure><img src="guide-img/tropical.jpg" alt="热带风" loading="lazy" width="540" height="784"><figcaption>热带风（原来那版）</figcaption></figure><figure><img src="guide-img/retro.jpg" alt="复古风" loading="lazy" width="540" height="784"><figcaption>复古风（新的）</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>先存，再换。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>想换风格，又舍不得这版</td>
+</tr>
+<tr>
+<td>00:03</td>
+<td>老板要复古风，你喜欢现在这版</td>
+</tr>
+<tr>
+<td>00:10</td>
+<td>Claude Design 还没有版本历史</td>
+</tr>
+<tr>
+<td>00:15</td>
+<td>换方向之前说："保存现在的，换个完全不同的方向"</td>
+</tr>
+<tr>
+<td>00:21</td>
+<td>旧的原样留着，新的放旁边</td>
+</tr>
+<tr>
+<td>00:25</td>
+<td>拿不定主意？要两三个方向</td>
+</tr>
+<tr>
+<td>00:34</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>也可以自己手动备份：点设计标题旁的小箭头，选 <strong>Duplicate</strong>，整份设计复制一份。</li>
+<li>只是改错了一步？按 Ctrl+Z（Mac 是 Cmd+Z）撤销。</li>
+<li>选中一张画板按 Ctrl+D（Mac 是 Cmd+D）可以复制那一张。</li>
+<li>官方说明里，这句话的英文原文是 "Save what we have and try a completely different approach"，用中文讲一样有效（我们就是用中文试的）。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》（Manage versions and revisions、Known limitations、Tips for best results 几节）
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
