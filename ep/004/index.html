@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 4 集 · 做好的海报怎么导出 · KopizAI</title>
+<meta name="description" content="右上角 Share → Export。发群用 PNG，打印用 PDF，导出前先勾对要哪一张。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 4 集 · 做好的海报怎么导出</h1>
+
+<p><strong>一句话：</strong> 右上角 Share → Export。发群用 PNG，打印用 PDF，导出前先勾对要哪一张。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-12　｜　时长 37 秒　｜　非官方教学</p>
+<h2>跟着做</h2>
+<p><strong>第一步：右上角 Share，切到 Export</strong>（视频 00:08）</p>
+<p>在设计画布的右上角点 <strong>Share</strong>，弹出的面板里切到 <strong>Export</strong> 分页。（设计标题旁的小箭头菜单里也有 Export，打开的是同一个面板。）</p>
+<div class="shots"><figure><img src="guide-img/step1-share.jpg" alt="右上角 Share" loading="lazy" width="540" height="960"><figcaption>右上角 Share</figcaption></figure><figure><img src="guide-img/step1-export.jpg" alt="切到 Export" loading="lazy" width="540" height="960"><figcaption>切到 Export</figcaption></figure></div>
+
+<p><strong>第二步：发群组，点 PNG</strong>（视频 00:11）</p>
+<p>点 <strong>PNG</strong> 右边的下载箭头。画布上方会出现 "Choose artboards to export"：点海报左上角的圆圈，勾上你要的那一张（默认只勾第一张），再点 <strong>Export 1 of 4 as PNG</strong>。</p>
+<p>旁边的 1× / 2× 是清晰度，默认 2×。我们导出的那张是 1800×2544 像素，发 WhatsApp 很够用。</p>
+<div class="shots"><figure><img src="guide-img/step2-png.jpg" alt="点 PNG" loading="lazy" width="540" height="960"><figcaption>点 PNG</figcaption></figure><figure><img src="guide-img/step2-choose.jpg" alt="勾要哪一张" loading="lazy" width="540" height="960"><figcaption>勾要哪一张，再 Export</figcaption></figure></div>
+
+<p><strong>第三步：拿去打印，点 PDF</strong>（视频 00:17）</p>
+<p>点 <strong>PDF</strong> 右边的下载箭头。<strong>小心：PDF 默认把画布上的每一张都勾上</strong>（我们画布上有四张，按钮写着 Export 4 as PDF）。只要一张，就把其他的圆圈点掉，按钮变成 <strong>Export 1 of 4 as PDF</strong> 再点。</p>
+<p>导出的 PDF 里，字是真的文字，打印出来字边清楚。</p>
+<div class="shots"><figure><img src="guide-img/step3-all.jpg" alt="默认四张全勾" loading="lazy" width="540" height="960"><figcaption>默认四张全勾</figcaption></figure><figure><img src="guide-img/step3-one.jpg" alt="只留一张" loading="lazy" width="540" height="960"><figcaption>只留一张</figcaption></figure></div>
+
+<p><strong>结果</strong>（视频 00:23）</p>
+<div class="shots"><figure><img src="guide-img/result.jpg" alt="导出的 PNG" loading="lazy" width="540" height="763"><figcaption>实际导出的 PNG（缩小显示）</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>发群用 PNG，打印用 PDF。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>海报做好了，怎么拿出来用？</td>
+</tr>
+<tr>
+<td>00:02</td>
+<td>老板要发群，还要印一张</td>
+</tr>
+<tr>
+<td>00:08</td>
+<td>右上角 Share，切到 Export</td>
+</tr>
+<tr>
+<td>00:11</td>
+<td>发群组：PNG，先勾要哪一张</td>
+</tr>
+<tr>
+<td>00:17</td>
+<td>打印：PDF，默认全勾，只留一张</td>
+</tr>
+<tr>
+<td>00:23</td>
+<td>导出的结果</td>
+</tr>
+<tr>
+<td>00:28</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>Export 面板里还有 <strong>HTML</strong>（单独的网页文件）、<strong>Claude Docs</strong>、<strong>Claude Slides</strong>，以及 <strong>More formats and apps</strong>（Canva、Miro、Gamma 等，要先连接你在那边的账号）。</li>
+<li>官方说明里列的格式和我们看到的界面不完全一样：文档写了 .zip、PPTX、Google Slides，没写 PNG；界面第一层有 PNG。以你自己看到的为准。</li>
+<li>要给同事看、让对方一直看到最新版，可以发链接，不用发文件：Export 面板最上面就有 "Sending this to someone?"。下一集讲。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》（Export and share 一节），以及 2026 年 11 月 claude.ai 的实际界面
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
