@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 5 集 · 把设计分享给别人一起看 · KopizAI</title>
+<meta name="description" content="还在改，发链接；定稿了，再导出。右上角 Share，把 Only you 改成 Anyone with the link，再 Copy link。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 5 集 · 把设计分享给别人一起看</h1>
+
+<p><strong>一句话：</strong> 还在改，发链接；定稿了，再导出。右上角 Share，把 Only you 改成 Anyone with the link，再 Copy link。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-12　｜　时长 39 秒　｜　非官方教学</p>
+<h2>跟着做</h2>
+<p><strong>第一步：别发文件，点右上角 Share</strong>（视频 00:09）</p>
+<p>在设计画布的右上角点 <strong>Share</strong>，面板停在 <strong>Share</strong> 分页（不是上一集的 Export）。</p>
+<div class="shots"><figure><img src="guide-img/step1-share.jpg" alt="右上角 Share" loading="lazy" width="540" height="960"><figcaption>右上角 Share</figcaption></figure></div>
+
+<p><strong>第二步：谁能看，改成 Anyone with the link</strong>（视频 00:13）</p>
+<p>面板下方 <strong>General access</strong> 一开始是 <strong>Only you</strong>。点它，选 <strong>Anyone with the link</strong>，菜单上写着：有链接的人能看，不能改。</p>
+<p>它会弹出确认框 "Share with anyone who has the link?"，说明有链接的人不用 Claude 账号、不用登录就能看。确定要分享，就点 <strong>Share publicly</strong>。</p>
+<div class="shots"><figure><img src="guide-img/step2-menu.jpg" alt="选 Anyone with the link" loading="lazy" width="540" height="960"><figcaption>选 Anyone with the link</figcaption></figure><figure><img src="guide-img/step2-confirm.jpg" alt="确认 Share publicly" loading="lazy" width="540" height="960"><figcaption>问你一次，点 Share publicly</figcaption></figure></div>
+
+<p><strong>第三步：Copy link，发给老板</strong>（视频 00:20）</p>
+<p>改好之后，右下角的按钮变成 <strong>Copy link</strong>。复制，贴到 WhatsApp 发给老板。</p>
+<p>对方能看，但改不了。你之后再改，他打开链接看到的就是最新的那一版，不用再一版一版发文件。（这一点来自 Export 分页里的说明："they will always have the latest changes"。）</p>
+<div class="shots"><figure><img src="guide-img/step3-copy.jpg" alt="Copy link" loading="lazy" width="540" height="960"><figcaption>Copy link</figcaption></figure><figure><img src="guide-img/step3-boss.jpg" alt="老板打开链接（示意）" loading="lazy" width="540" height="960"><figcaption>老板打开链接（示意）</figcaption></figure></div>
+
+<p class="note">老板手机那张是示意图，不是真实画面。</p>
+
+<p><strong>不想给人看了：改回 Only you</strong>（视频 00:27）</p>
+<p>同一个地方，把 Anyone with the link 改回 <strong>Only you</strong>（菜单里叫 Only people invited）。底下会写 "Only you can open this link"，链接就只有你自己能开。</p>
+<div class="shots"><figure><img src="guide-img/step4-back.jpg" alt="改回 Only you" loading="lazy" width="540" height="960"><figcaption>改回 Only you</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>还在改，发链接；定稿了，再导出。</strong></p>
+<p>（导出 PNG、PDF 的做法见第 4 集。）</p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>海报改了三版，老板还在看第一版</td>
+</tr>
+<tr>
+<td>00:03</td>
+<td>群里全是"最终版"</td>
+</tr>
+<tr>
+<td>00:09</td>
+<td>别发文件，点右上角 Share</td>
+</tr>
+<tr>
+<td>00:13</td>
+<td>Only you → Anyone with the link → Share publicly</td>
+</tr>
+<tr>
+<td>00:20</td>
+<td>Copy link 发给老板：能看、改不了、永远是最新的</td>
+</tr>
+<tr>
+<td>00:27</td>
+<td>不想给人看了，改回 Only you</td>
+</tr>
+<tr>
+<td>00:31</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>免费版、Pro、Max 只有两种：<strong>Only you</strong>（只有自己）和 <strong>Anyone with the link</strong>（有链接的人都能看）。Pro 以上还能在顶上 "Invite people by email" 用邮件邀请特定的人（官方写的是测试版）。</li>
+<li>Team、Enterprise 方案可以只分享给公司里的人；Anyone with the link 要管理员开了对外分享才会出现。</li>
+<li>被邀请的人可以给不同权限：只能看、能留言、能编辑。公开链接只能看。</li>
+<li>手机 App 里改不了分享设置，要用网页版或电脑版。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》《Share artifacts》，以及 2026 年 11 月 claude.ai 的实际界面
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a>
+<a href="https://support.claude.com/en/articles/9547008">https://support.claude.com/en/articles/9547008</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
