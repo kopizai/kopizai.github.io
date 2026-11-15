@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 8 集 · 一句话，把店名、价钱、日期填进两张海报 · KopizAI</title>
+<meta name="description" content="店名、价钱、日期、营业时间、地址一次给齐，讲明是哪几张，看完它的回复再导出。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 8 集 · 一句话，把店名、价钱、日期填进两张海报</h1>
+
+<p><strong>一句话：</strong> 店名、价钱、日期、营业时间、地址一次给齐，讲明是哪几张，看完它的回复再导出。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-16　｜　时长 53 秒　｜　非官方教学</p>
+<h2>为什么要这样做</h2>
+<p>海报做好后，上面常常还是占位格：<code>$[价格]</code>、<code>[开张日期]</code>、<code>[地址]</code>。一格一格点进去改很慢，两张海报就要改两次。</p>
+<h2>跟着做</h2>
+<p><strong>第一步：资料一次给齐，讲明是哪几张</strong>（视频 00:05）</p>
+<p>在同一个设计的对话框里，一句话发出去：</p>
+<ol>
+<li><strong>店名</strong></li>
+<li><strong>每样东西的价钱</strong>（写上 RM）</li>
+<li><strong>开张日期</strong></li>
+<li><strong>营业时间</strong></li>
+<li><strong>地址</strong></li>
+<li><strong>讲明是哪几张</strong>：例如"第一张热带风的，和 WhatsApp 状态那张"</li>
+</ol>
+<p>可以直接复制，换成你自己的资料：</p>
+<pre><code>两张海报（第一张热带风的，和 WhatsApp 状态那张）一起填上：店名 ＿＿；Kopi O RM＿＿、Kopi C RM＿＿、Teh Tarik RM＿＿；开张日期 ＿＿；营业时间 ＿＿；地址 ＿＿。
+</code></pre>
+<p>（视频里用的是示范资料：Kopi 仔茶室、示范路 8 号，不是真的店。）</p>
+<div class="shots"><figure><img src="guide-img/step1-ask.jpg" alt="资料一次给齐，讲明哪两张" loading="lazy" width="540" height="960"><figcaption>资料一次给齐，讲明哪两张</figcaption></figure></div>
+
+<p><strong>结果：两张一起填好</strong>（视频 00:14）</p>
+<p>我们这次一分钟左右，两张都填好了。长条那张（WhatsApp 状态版），营业时间它自己拆成两行，让大字放得下。另外三张没讲到，它就没动。</p>
+<div class="shots"><figure><img src="guide-img/step2-result.jpg" alt="两张一起填好" loading="lazy" width="540" height="960"><figcaption>两张一起填好，另外三张没动</figcaption></figure></div>
+
+<p><strong>价钱记得写 RM</strong>（视频 00:22）</p>
+<p>原来的价钱格写的是 <code>$[价格]</code>。我们写 RM，它就照着改成 RM1.50，不会留下 $。</p>
+<div class="shots"><figure><img src="guide-img/step3-rm.jpg" alt="$[价格] 改成 RM1.50" loading="lazy" width="540" height="960"><figcaption>原来是 $，写 RM 就改成 RM</figcaption></figure></div>
+
+<p><strong>一定要看完它的回复</strong>（视频 00:28）</p>
+<p>热带风那张原来写 "[店名] Kopitiam"。店名换上去以后，"Kopitiam" 这个字没了。Claude 在回复里自己讲出来，还问要不要加回来。所以导出前先看完回复，有没有哪里跟你想的不一样。</p>
+<div class="shots"><figure><img src="guide-img/step4-reply.jpg" alt="回复里讲了 Kopitiam 不见了" loading="lazy" width="540" height="960"><figcaption>回复里讲了改动</figcaption></figure></div>
+
+<p><strong>第二步：导出时两张一起勾</strong>（视频 00:36）</p>
+<p>Share → Export → PNG，在 "Choose artboards to export" 里把两张都勾上。按钮会写 "Export 2 of 5 PNGs (.zip)"（数字看你画布上有几张）。下载下来是一个 zip 压缩包，解开就是两张图。</p>
+<div class="shots"><figure><img src="guide-img/step5-export.jpg" alt="两张一起勾，下载 zip" loading="lazy" width="540" height="960"><figcaption>两张一起勾，下载是 zip</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>资料一次给齐，讲明哪几张，看完回复再导出。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>海报上还挂着 [价格]、[开张日期]</td>
+</tr>
+<tr>
+<td>00:05</td>
+<td>资料一次给齐，讲明哪两张</td>
+</tr>
+<tr>
+<td>00:14</td>
+<td>一分钟左右，两张一起填好</td>
+</tr>
+<tr>
+<td>00:22</td>
+<td>价钱写 RM</td>
+</tr>
+<tr>
+<td>00:28</td>
+<td>一定要看完回复</td>
+</tr>
+<tr>
+<td>00:36</td>
+<td>导出：两张一起勾，下载是 zip</td>
+</tr>
+<tr>
+<td>00:41</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>只想导出一张，或要固定尺寸（例如 1×），做法见第 4 集和第 7 集。</li>
+<li>这一集我们用中文发，Claude 却用英文回复，因为这个对话之前一直是英文。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》，以及 2026 年 11 月 claude.ai 的实际操作
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
