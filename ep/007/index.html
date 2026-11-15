@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 7 集 · 一张海报，改成 WhatsApp 状态的尺寸 · KopizAI</title>
+<meta name="description" content="跟 Design 讲清楚做什么用、要多大，再加一句&quot;原来那张不要动&quot;。导出时只勾那一张，选 1×。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 7 集 · 一张海报，改成 WhatsApp 状态的尺寸</h1>
+
+<p><strong>一句话：</strong> 跟 Design 讲清楚做什么用、要多大，再加一句"原来那张不要动"。导出时只勾那一张，选 1×。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-15　｜　时长 50 秒　｜　非官方教学</p>
+<h2>为什么要另做一张</h2>
+<p>A4 海报是直的长方形，手机屏幕更长。A4 直接发上 WhatsApp 状态，上下会空一截，字也变小（视频 00:00 是示意图）。</p>
+<h2>跟着做</h2>
+<p><strong>第一步：回到 Design，讲清楚三件事</strong>（视频 00:09）</p>
+<p>在同一个设计的对话框里讲：</p>
+<ol>
+<li><strong>做什么用</strong>：WhatsApp 状态</li>
+<li><strong>多大</strong>：手机全屏直版 9:16，1080×1920，字要大</li>
+<li><strong>原来那张不要动</strong></li>
+</ol>
+<p>可以直接复制：</p>
+<pre><code>把第一张热带风的开张海报，另外做一张 WhatsApp 状态用的版本：手机全屏直版 9:16（1080×1920），字要大，手机上一眼看得清。原来那张不要动。
+</code></pre>
+<p>（"第一张热带风"换成你要改的那一张。）</p>
+<div class="shots"><figure><img src="guide-img/step1-ask.jpg" alt="讲清楚做什么用、多大、原来那张不要动" loading="lazy" width="540" height="960"><figcaption>讲清楚三件事</figcaption></figure></div>
+
+<p><strong>结果：画布上多一张长条的</strong>（视频 00:20）</p>
+<p>我们这次不到两分钟：原海报下面多了一张长条的，三杯饮料从并排改成一行一杯，字全放大。原来那张没有变。</p>
+<div class="shots"><figure><img src="guide-img/step2-result.jpg" alt="多了一张长条的" loading="lazy" width="540" height="960"><figcaption>多了一张长条的，原来那张没动</figcaption></figure></div>
+
+<p><strong>它还自己上下留了空</strong>（视频 00:29）</p>
+<p>Claude 在回复里说，它在上下留了空，WhatsApp 状态顶上的进度条和底下的回复框就不会挡到字。</p>
+<div class="shots"><figure><img src="guide-img/step3-margins.jpg" alt="上下留空" loading="lazy" width="540" height="960"><figcaption>上下留空（进度条和回复框是示意）</figcaption></figure></div>
+
+<p><strong>第二步：导出时只勾这一张，选 1×</strong>（视频 00:34）</p>
+<p>Share → Export → PNG。它默认勾第一张，要先把第一张取消，再勾长条那张；清晰度选 <strong>1×</strong>，按钮会写 "Export 1 of 5 as PNG"（数字看你画布上有几张）。我们导出来刚好 1080×1920。</p>
+<div class="shots"><figure><img src="guide-img/step4-export.jpg" alt="只勾这一张，选 1×" loading="lazy" width="540" height="960"><figcaption>只勾这一张，选 1×</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>讲用途，给尺寸，原版不要动。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>A4 海报发上状态，上下空一截（示意）</td>
+</tr>
+<tr>
+<td>00:05</td>
+<td>海报是 A4，手机是长条的</td>
+</tr>
+<tr>
+<td>00:09</td>
+<td>讲清楚：做什么用、多大、原来那张不要动</td>
+</tr>
+<tr>
+<td>00:20</td>
+<td>两分钟不到，多一张长条的</td>
+</tr>
+<tr>
+<td>00:29</td>
+<td>它自己上下留空</td>
+</tr>
+<tr>
+<td>00:34</td>
+<td>导出：只勾这一张，选 1×</td>
+</tr>
+<tr>
+<td>00:40</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>1080×1920 是我们自己要求的尺寸（手机全屏 9:16）。我们没有找到 WhatsApp 官方公布的状态尺寸，所以不说"WhatsApp 规定"。</li>
+<li>窗口很窄、左边栏又打开时，Design 右上角的 Share 会变成一个小图标；把左边栏收起来就恢复成文字按钮。</li>
+<li>导出 PNG 和 PDF 的完整做法见第 4 集。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》，以及 2026 年 11 月 claude.ai 的实际操作
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
