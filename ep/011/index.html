@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第 11 集 · 叫 Design 帮你挑毛病 · KopizAI</title>
+<meta name="description" content="先叫 Design 挑毛病、先不要改，问它具体的问题（字够不够大、颜色看不看得清、第一眼看到什么），再叫它改最严重的那几点，另外做一份。">
+<link rel="icon" href="../../assets/avatar.png">
+<style>
+:root { --bg:#FFFDF5; --fg:#1F1A38; --muted:#5E5A72; --card:#FFFFFF; --line:#ECE7D8; --accent:#EE4266; --yellow:#FFD23F; --code:#FFF6D6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#16131F; --fg:#F2EFE6; --muted:#B5B0C4; --card:#211C2E; --line:#332C44; --accent:#FF6B8A; --yellow:#FFD23F; --code:#2A2338; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.75 "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif; }
+.top { background: var(--yellow); border-bottom: 4px solid #1F1A38; }
+.top .in, main, footer .in { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.top img { height: 52px; width: auto; display: block; }
+.top a.home { color: #1F1A38; font-weight: 700; text-decoration: none; font-size: 15px; white-space: nowrap; }
+main { padding-block: 28px 48px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 8px; border-top: 2px dashed var(--line); }
+p, li { max-width: 65ch; }
+strong { color: var(--fg); }
+a { color: var(--accent); overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--card); }
+.code { position: relative; margin: 12px 0; }
+pre { background: var(--code); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; padding-right: 76px; white-space: pre-wrap; word-break: break-word; font: 15px/1.7 inherit; margin: 0; }
+code { font-family: inherit; }
+.copy { position: absolute; top: 10px; right: 10px; font: 700 13px inherit; border: 2px solid #1F1A38; background: var(--yellow); color: #1F1A38; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 14px; }
+.watches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 18px; }
+.watch { display: inline-block; margin: 0; background: var(--accent); color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; }
+.list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.list a { display: block; text-decoration: none; color: var(--fg); background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.list a:hover { border-color: var(--accent); }
+.list .t { font-weight: 800; font-size: 18px; }
+.list .s { color: var(--muted); font-size: 15px; }
+.shots { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0 8px; }
+.shots figure { margin: 0; flex: 1 1 200px; max-width: 280px; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 14px; border: 2px solid var(--line); }
+.shots figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 0; }
+footer { border-top: 2px solid var(--line); }
+footer .in { padding-block: 18px 28px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><a href="../../index.html"><img src="../../assets/logo.png" alt="KopizAI - Kopi仔"></a><a class="home" href="../../index.html">全部集数</a></div></div>
+<main>
+<h1>第 11 集 · 叫 Design 帮你挑毛病</h1>
+
+<p><strong>一句话：</strong> 先叫 Design 挑毛病、先不要改，问它具体的问题（字够不够大、颜色看不看得清、第一眼看到什么），再叫它改最严重的那几点，另外做一份。</p>
+<p>对照官方文档和真实界面核对日期：2026-11-22　｜　时长 50 秒　｜　非官方教学</p>
+<h2>为什么先挑不先改</h2>
+<p>官方说明的小技巧里有一条：叫 Claude 给意见，它会检查可读性、对比度、信息层次和好不好用，把它当设计伙伴，不只是生成器。另一条是：意见要讲具体。所以我们不问"好不好看"，问三个具体的问题，还叫它先不要改：先看清楚有什么毛病，再决定改哪几个。</p>
+<h2>跟着做</h2>
+<p><strong>第一步：先不要改，问它具体的问题</strong>（视频 00:05）</p>
+<p>我们拿上一集做的集点卡来试，在同一个设计里问：</p>
+<ol>
+<li><strong>先不要改</strong>，只挑毛病</li>
+<li><strong>字够不够大</strong>：印成名片大小（90×54 毫米）以后，最小的字大概几点？</li>
+<li><strong>颜色看不看得清</strong>：字和底色的对比度够不够？</li>
+<li><strong>第一眼</strong>：客人一眼最先看到的，是不是最重要的那句？</li>
+</ol>
+<p>最后叫它按严重程度排，每一点讲在哪里、为什么、建议怎么改。</p>
+<p>可以直接复制（换成你的东西）：</p>
+<pre><code>帮我挑一挑＿＿（哪一张）的毛病，先不要改：
+1. 印成＿＿（尺寸）以后，字够不够大？最小的字大概几点？
+2. 字和底色的对比度够不够，看不看得清？
+3. 客人一眼最先看到的，是不是&quot;＿＿&quot;（最重要的那句）？
+按严重程度排，每一点讲在哪里、为什么、建议怎么改。
+</code></pre>
+<div class="shots"><figure><img src="guide-img/step1-ask.jpg" alt="先不要改，问具体的问题" loading="lazy" width="540" height="960"><figcaption>先不要改，问三个具体的问题</figcaption></figure></div>
+
+<p><strong>结果：每一样都给数字</strong>（视频 00:15）</p>
+<p>我们这次大约一分钟就回完，什么都没改。它一共挑出 6 个毛病，先回答三个问题：</p>
+<ul>
+<li><strong>字号</strong>：最小的字是 9pt（第 10 个圈里的"免费一杯"和背面的"集点规则"小标），还列了一张字号对照表。</li>
+<li><strong>对比度</strong>：大致够，最弱的是"买十送一"红字配黄底，3.8:1。</li>
+<li><strong>第一眼</strong>：是"买十送一"，但领先不多，下面 10 个深色圈也在抢眼球。</li>
+</ul>
+<p>对比度我们用原卡的颜色自己算过一遍，跟它说的对得上。字号是它估的，我们没有另外验证。</p>
+<div class="shots"><figure><img src="guide-img/step2-numbers.jpg" alt="每一样都给数字" loading="lazy" width="540" height="960"><figcaption>字号对照表、对比度 3.8:1</figcaption></figure></div>
+
+<p><strong>最严重的一个，是我们自己写的</strong>（视频 00:22）</p>
+<p>上一集的提示词写了"第 10 个圈写'免费一杯'"，结果第 10 个圈涂满红色又有字：章盖上去看不清，还会压住字；而且"第 10 格写免费"很容易被看成"买九送一"，跟"买十送一"对不上。挑毛病连你自己的要求都会检查。</p>
+<div class="shots"><figure><img src="guide-img/step3-worst.jpg" alt="最严重：第 10 个圈" loading="lazy" width="540" height="960"><figcaption>第 10 个圈：章看不清，还像买九送一</figcaption></figure></div>
+<p class="note">画面里的盖章是动画示意，不是 Design 做的。</p>
+
+<p><strong>第二步：改最严重的两点，另外做一份</strong>（视频 00:31）</p>
+<pre><code>照你说的，改最严重的两点，另外做一份新的正反两张，原来的不要动。
+</code></pre>
+<p>一分多钟做好。新版放在原来那张下面，原来的没动：</p>
+<ul>
+<li>10 个圈全部留白，盖上去的章看得清楚。</li>
+<li>"免费一杯"移到圈下面，变成一整行"集满 10 个 → 免费一杯"。</li>
+</ul>
+<p>它还自己说：为了腾出这一行，圈从大约 10 毫米缩到 9.5 毫米，印章大于 9 毫米要先跟它讲。其他几个比较轻的毛病它没动，要改再跟它说。</p>
+<div class="shots"><figure><img src="guide-img/step4-fix.jpg" alt="另外做一份新的" loading="lazy" width="540" height="960"><figcaption>原来的没动，新的 10 个圈全留白</figcaption></figure></div>
+
+<h2>口诀</h2>
+<p><strong>先挑不先改，问题要具体，严重的先改。</strong></p>
+<div class="shots"><figure><img src="guide-img/rule.jpg" alt="口诀" loading="lazy" width="540" height="960"><figcaption>口诀</figcaption></figure></div>
+
+<h2>时间点</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00</td>
+<td>上一集的集点卡，挑出 6 个毛病</td>
+</tr>
+<tr>
+<td>00:05</td>
+<td>这样问：先不要改，问三个具体的问题</td>
+</tr>
+<tr>
+<td>00:15</td>
+<td>每一样都给数字：9pt、3.8:1</td>
+</tr>
+<tr>
+<td>00:22</td>
+<td>最严重：第 10 个圈</td>
+</tr>
+<tr>
+<td>00:31</td>
+<td>再说一句：改两点，另外做一份</td>
+</tr>
+<tr>
+<td>00:39</td>
+<td>口诀，下一集预告</td>
+</tr>
+</tbody>
+</table>
+<h2>顺便知道</h2>
+<ul>
+<li>它另外还提了一点：店名离上边只有大约 3 毫米，卡也没有留出血，印之前最好把边距加到 4 毫米左右，再加 2–3 毫米出血（第 10 集讲过出血）。</li>
+<li>"另外做一份，原来的不要动"第 7、9、10 集都用过：改坏了也还有原来那份。</li>
+<li>官方说明现在写：Claude Design 在任何对话里都能打开；单独的 claude.ai/design 网址 2026 年 12 月 14 日关闭。我们一直是在对话里用 Design。</li>
+<li>店名、地址是示范资料，不是真的店。</li>
+</ul>
+<p>来源：Claude 帮助中心《Get started with Claude Design》，以及 2026 年 11 月 claude.ai 的实际操作
+<a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design">https://support.claude.com/en/articles/14604416-get-started-with-claude-design</a></p>
+</main>
+<footer><div class="in">KopizAI - Kopi仔 · 一集一招学 AI · 非官方教学，与 Anthropic 无关。界面和功能以写作当时为准。</div></footer>
+<script>
+document.querySelectorAll('pre').forEach(pre => {
+  const wrap = document.createElement('div'); wrap.className = 'code';
+  pre.parentNode.insertBefore(wrap, pre); wrap.appendChild(pre);
+  const b = document.createElement('button'); b.className = 'copy'; b.type = 'button'; b.textContent = '复制';
+  b.onclick = async () => {
+    const t = pre.innerText.trim();
+    try { await navigator.clipboard.writeText(t); b.textContent = '已复制'; }
+    catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '已选中，请复制'; }
+    setTimeout(() => b.textContent = '复制', 1500);
+  };
+  wrap.appendChild(b);
+});
+</script>
+</body>
+</html>
